@@ -7,7 +7,14 @@ export class ClanController extends BaseController {
       { url: "clan/" },
       { headers: { Authorization: `Bearer ${this.params.token}` } }
     );
-
+    return response;
+    }
+  async createClan(clanname, isPublic, maxMembers) {
+    const response = await request.post(
+      { url: "clan/" },
+      { headers: { Authorization: `Bearer ${this.params.token}` } },
+      { body: {"name" : clanname, "isPublic" : isPublic, "maxMembers" : maxMembers } }
+    );
     return response;
   }
 }

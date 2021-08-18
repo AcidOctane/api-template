@@ -1,4 +1,4 @@
-import { UserController, ClanController } from "./controller/index.js";
+import { UserController, ClanController, TaskController, FollowerController } from "./controller/index.js";
 
 export class ApiClient {
   constructor(params) {
@@ -11,6 +11,8 @@ export class ApiClient {
 
     this.clan = new ClanController(mergeParams);
     this.user = new UserController(mergeParams);
+    this.task = new TaskController(mergeParams);
+    this.follower = new FollowerController(mergeParams);
   }
 
   static async authorized(credentials) {

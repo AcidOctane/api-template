@@ -1,19 +1,22 @@
 import { expect } from "chai";
 import { ApiClient } from "../src/apiClient.js";
 import { user } from "../src/data/user.js";
+import { task } from "../src/data/task.js";
 
-describe("Suite - /clan route", function () {
- 
+describe("Suite - /task route", function () {
 
-  xit("get all clans list", async () => {
+  it("get all tasks list", async () => {
     const apiClient = await ApiClient.authorized(user);
-    const { statusCode } = await apiClient.clan.getAllClans();
+    const { statusCode } = await apiClient.task.getAllTasks();
+
     expect(statusCode).to.be.eql(200);
   });
 
-  xit("create a clan", async () => {
+  it("create a task", async () => {
     const apiClient = await ApiClient.authorized(user);
-    const { statusCode } = await apiClient.clan.createClan("QaClan", "true", 20);
+    const { statusCode } = await apiClient.task.createTask(newTask);
+
     expect(statusCode).to.be.eql(200);
-  })
+  });
+
 });
