@@ -7,7 +7,8 @@ describe("Suite - /clan route", function () {
 
   xit("get all clans list", async () => {
     const apiClient = await ApiClient.authorized(user);
-    const { statusCode } = await apiClient.clan.getAllClans();
+    const { statusCode, body } = await apiClient.clan.getAllClans();
+    console.log(body);
     expect(statusCode).to.be.eql(200);
   });
 

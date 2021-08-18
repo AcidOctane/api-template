@@ -1,10 +1,9 @@
 import { expect } from "chai";
 import { ApiClient } from "../src/apiClient.js";
-import { user } from "../src/data/user.js";
-import { invalidUser } from "../src/data/user.js";
+import { invalidPassword, invalidEmail, user } from "../src/data/user.js";
 
 describe("Suite - /auth/login route", function () {
-  it("should be albe to login", async () => {
+  xit("should be albe to login", async () => {
     const apiClient = ApiClient.unauthorized();
     const { body, statusCode } = await apiClient.user.login(user);
 
@@ -12,12 +11,23 @@ describe("Suite - /auth/login route", function () {
     expect(body.user.email).to.be.eql(user.email);
   });
   
-  it("shouldn't be albe to login", async () => {
-    try {
-      const apiClient = ApiClient.unauthorized();
-    }
-    catch(err) {
-      expect(err).to.eql(new Error('Response code 401 (Unauthorized)')); 
-    }
+  xit("shouldn't be albe to login with wrong email", async () => {
+    
+    const apiClient = ApiClient.unauthorized();
+    const { body, statusCode } = await apiClient.user.login(invalidEmail, false);
+    console.log(statusCode);
+    expect(statusCode).to.eql(401);
+    expect(body.message).to.eql('Incorrect email.'); 
+    
+  });
+
+  xit("shouldn't be albe to login with wrong password", async () => {
+    
+    const apiClient = ApiClient.unauthorized();
+    const { body, statusCode } = await apiClient.user.login(invalidPassword, false);
+    console.log(body);
+    expect(statusCode).to.eql(401);
+    expect(body.message).to.eql('Incorrect email.'); 
+    
   });
 });

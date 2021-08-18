@@ -3,11 +3,15 @@ import { BaseController } from "./base.controller.js";
 
 export class UserController extends BaseController {
   
-  async login({ email, password }) {
+  async login({ email, password }, throwHttpErrors = true) {
     const response = await request.post({
       url: "auth/login",
       body: { email, password },
-    });
+      },
+      {
+        throwHttpErrors
+      }
+    );
 
     return response;
   };
@@ -34,5 +38,26 @@ export class UserController extends BaseController {
     });
 
     return response;
+  };
+
+  async getAllUsers() {
+    const response = request.get(
+      {url: "users/"},
+      { headers: { Authorization: `Bearer ${this.params.token}` }}
+      );
+
+    return response;
+  };
+  
+  async getUserById(userID) {
+    const response = request.get(
+      { url: `users/${userID}`},
+      { headers: { Authorization: `Bearer ${this.params.token}` } }
+      );
+
+    return response;
   }
+
+
+
 };
