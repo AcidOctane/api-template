@@ -1,6 +1,7 @@
-import * as random from "./helper.js"
+import { randomNumber } from "../common/utils/helper.js";
+
 export const newTask = {
-  name: `Automatically created task ${random.randomNumber}`,
+  name: `Automatically created task ${randomNumber}`,
   rank: 5,
   initialSolution: "let a = 100, return a*100"
 }

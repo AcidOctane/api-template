@@ -29,10 +29,16 @@ export class TaskController extends BaseController {
 
   async deleteTask(taskID){
     const response = await request.delete(
-      {url: `tasks/${taskID}`}
+      {url: `tasks/${taskID}`},
+      { headers: { Authorization: `Bearer ${this.params.token}` }},
     );
 
     return response;
   }
+  
+  //TODO add search task fucntion
 
 }
+
+
+

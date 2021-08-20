@@ -1,4 +1,4 @@
-import { randomNumber } from "./helper.js";
+import { randomNumber } from "../common/utils/helper.js";
 
 export const user = {
   email: "test3@bsa21.com",
@@ -21,12 +21,12 @@ export const userToDelete = {
 } 
 
 export const newUser = {
-  email: `test${randomNumber}@google.com`,
-  password: `Pa55word${randomNumber}`,
-  username: `testnick${randomNumber}`,
-  name: 'John',
-  surname: 'Johnson'
-};
+  username : `user-${randomNumber}`,
+  email : `user${randomNumber}@bsa21.com`,
+  name : `John-${randomNumber}`,
+  surname : `Johnson-${randomNumber}`,
+  password : `Pa55word${randomNumber}`
+}
 
 export const userID = "c69ed9a1-0f4f-49e8-a781-a46bc1aa0d1e";
 export const invalidUserID = "5a535fdf-cfdc-48ce-bcf0-bbb2986f226f";
