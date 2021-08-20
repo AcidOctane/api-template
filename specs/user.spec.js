@@ -4,7 +4,7 @@ import { user, userID, invalidUserID } from "../src/data/user.js";
 
 describe("Suite - users/ route", function()  {
 
-  it("should get all users list", async () => {
+  xit("should get all users list", async () => {
     const apiClient = await ApiClient.authorized(user);
     const { statusCode, body } = await apiClient.user.getAllUsers();
     console.log(body);

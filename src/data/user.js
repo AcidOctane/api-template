@@ -21,7 +21,11 @@ export const userToDelete = {
 } 
 
 export const newUser = {
-
+  email: `test${randomNumber}@google.com`,
+  password: `Pa55word${randomNumber}`,
+  username: `testnick${randomNumber}`,
+  name: 'John',
+  surname: 'Johnson'
 };
 
 export const userID = "c69ed9a1-0f4f-49e8-a781-a46bc1aa0d1e";
