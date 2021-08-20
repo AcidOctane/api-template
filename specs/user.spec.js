@@ -23,7 +23,6 @@ describe("Suite - users/ route", function()  {
   it("shouldn't get unexisted user", async () => {
     const apiClient = await ApiClient.authorized(user);
     const { statusCode } = await apiClient.user.getUserById(`${invalidUserID}`, false);
-    console.log(statusCode);
     expect(statusCode).to.be.eql(200);
   })
   
