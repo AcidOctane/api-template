@@ -12,9 +12,5 @@ describe("Suite - /clan route", function () {
     expect(statusCode).to.be.eql(200);
   });
 
-  xit("create a clan", async () => { //doesn't work, will investigate problem
-    const apiClient = await ApiClient.authorized(user);
-    const { statusCode } = await apiClient.clan.createClan(`QaClan${randomNumber}`, "true", 20);
-    expect(statusCode).to.be.eql(200);
-  })
+
 });
