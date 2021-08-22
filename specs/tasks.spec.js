@@ -19,6 +19,4 @@ describe("Suite - /task route", function () {
     expect(statusCode).to.be.eql(200);
   });
 
-//TODO add search tasks by name, rank etc.
-
 });

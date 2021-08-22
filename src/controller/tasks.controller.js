@@ -15,11 +15,11 @@ export class TaskController extends BaseController {
     const response = await request.post(
       { url: "tasks/" },
       { headers: { Authorization: `Bearer ${this.params.token}` }},
-      { body: { 
-        name : payload.taskName, 
-        rank: payload.rank, 
-        initialSolution : payload.initialSolution, 
-        completeSolution : payload.completeSolution, 
+      { body: {
+        name : payload.taskName,
+        rank: payload.rank,
+        initialSolution : payload.initialSolution,
+        completeSolution : payload.completeSolution,
         isPublished : payload.isPublished}
       }
     );
@@ -35,8 +35,6 @@ export class TaskController extends BaseController {
 
     return response;
   }
-  
-  //TODO add search task fucntion
 
 }
 
