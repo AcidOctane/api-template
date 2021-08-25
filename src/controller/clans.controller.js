@@ -14,10 +14,10 @@ export class ClanController extends BaseController {
     const response = await request.post(
       { url: "clan/" },
       { headers: { Authorization: `Bearer ${this.params.token}` } },
-      { body: { 
-        name : payload.name, 
-        isPublic : payload.isPublic, 
-        maxMembers : payload.maxMembers} 
+      { body: {
+        name : payload.name,
+        isPublic : payload.isPublic,
+        maxMembers : payload.maxMembers}
       }
     );
     return response;

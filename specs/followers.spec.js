@@ -4,14 +4,14 @@ import { user } from "../src/data/user.js";
 
 describe("Suite - /followers route", function () {
 
-  it("get all followers list", async () => {
+  xit("get all followers list", async () => {
     const apiClient = await ApiClient.authorized(user);
     const { statusCode } = await apiClient.follower.getFollowers();
 
     expect(statusCode).to.be.eql(200);
   });
 
-  it("get all followings list", async () => {
+  xit("get all followings list", async () => {
     const apiClient = await ApiClient.authorized(user);
     const { statusCode } = await apiClient.follower.getFollowings();
 

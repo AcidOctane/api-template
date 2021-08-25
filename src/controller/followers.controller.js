@@ -12,12 +12,12 @@ export class FollowerController extends BaseController {
     return response;
     }
 
-    async getFollowings() {
+    async getFollowings(id) {
       const response = await request.get(
-        { url: `followers/following/${user.id}` },
+        { url: `followers/following/${id}` },
         { headers: { Authorization: `Bearer ${this.params.token}` } }
       );
-  
+
       return response;
       }
   }
